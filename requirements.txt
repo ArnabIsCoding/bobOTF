@@ -1,5 +1,9 @@
-# Root-level dependencies for mcp_server.py
+# Root-level dependencies for mcp_server.py and web.py
 # (Device-specific deps are listed in each DEVICE N/ subdirectory)
+
+# Web / demo dashboard
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
 
 # MCP Python SDK — provides FastMCP and the stdio transport
 mcp>=2.0.0
