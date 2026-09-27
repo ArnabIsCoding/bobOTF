@@ -11,6 +11,7 @@ mcp>=2.0.0
 #Memory
 rank_bm25
 jsonschema
+numpy
 
 # Instinct: DetectorConfig.from_yaml()
 pyyaml

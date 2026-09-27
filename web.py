@@ -20,6 +20,12 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, JSONResponse
 
+# Force non-interactive approval when running as a web server — interactive
+# mode would block forever waiting on stdin that never arrives.
+if os.getenv("APPROVAL_MODE") is None:
+    os.environ["APPROVAL_MODE"] = "auto_approve"
+
+
 # ---------------------------------------------------------------------------
 # Path setup — same as mcp_server.py
 # ---------------------------------------------------------------------------
