@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LadderDiff (Hands -> Approval)",
+  "type": "object",
+  "required": ["device_id", "dialect", "old_rung", "new_rung", "ir", "explanation", "validation"],
+  "additionalProperties": false,
+  "properties": {
+    "device_id": { "type": "string", "minLength": 1 },
+    "dialect": { "type": "string", "minLength": 1 },
+    "old_rung": { "type": "string" },
+    "new_rung": { "type": "string" },
+    "ir": { "type": "object" },
+    "explanation": { "type": "string" },
+    "validation": {
+      "type": "object",
+      "required": ["passed", "checks"],
+      "additionalProperties": false,
+      "properties": {
+        "passed": { "type": "boolean" },
+        "checks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

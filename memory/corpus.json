@@ -1,0 +1,102 @@
+[
+  {
+    "chunk_id": "conv-motor-manual-p14",
+    "procedure_id": "PROC-VIB-014",
+    "source_doc": "Conveyor Motor Maintenance Manual",
+    "page": 14,
+    "anomaly_types": ["vibration_drift"],
+    "title": "Vibration Drift Response - Conveyor Motors",
+    "text": "Section 4.2 Vibration Drift. If sustained vibration readings on a conveyor drive motor drift more than 25% above the recorded baseline for longer than 10 minutes, treat this as an early bearing or misalignment indicator. Operators must stop the affected conveyor motor and lock out power before inspection. Do not restart until vibration returns to within 10% of baseline.",
+    "suggested_fix_nl": "If vibration exceeds threshold, stop conveyor motor 2."
+  },
+  {
+    "chunk_id": "vib-handbook-p07",
+    "procedure_id": "PROC-VIB-007",
+    "source_doc": "Vibration Analysis Handbook",
+    "page": 7,
+    "anomaly_types": ["vibration_drift", "bearing_wear"],
+    "title": "Interpreting Vibration Drift Trends",
+    "text": "A gradual rise in mm/s vibration over a 10-20 minute window, without a corresponding RPM change, usually indicates bearing wear or shaft misalignment rather than a load change. Confirm against baseline before acting; if drift exceeds 30% of baseline, halt the motor and schedule inspection.",
+    "suggested_fix_nl": "If vibration drift exceeds 30% of baseline, stop the motor and schedule a bearing inspection."
+  },
+  {
+    "chunk_id": "bearing-ticket-log-112",
+    "procedure_id": "TICKET-2291",
+    "source_doc": "Bearing Inspection Ticket Log",
+    "page": 3,
+    "anomaly_types": ["bearing_wear"],
+    "title": "Ticket #2291 - Conveyor Motor Bearing Replacement",
+    "text": "Recurring high-frequency vibration and audible grinding traced to worn drive-end bearing on conveyor motor. Resolution: stop motor immediately when vibration exceeds 4.5 mm/s to prevent shaft damage, then replace bearing per part BRG-6205.",
+    "suggested_fix_nl": "If vibration exceeds 4.5 mm/s, stop the motor before bearing damage propagates."
+  },
+  {
+    "chunk_id": "thermal-sop-p02",
+    "procedure_id": "PROC-THM-002",
+    "source_doc": "Thermal Protection SOP",
+    "page": 2,
+    "anomaly_types": ["thermal_creep"],
+    "title": "Motor Winding Temperature Creep",
+    "text": "A slow rise in winding or casing temperature over 15-30 minutes with stable load is defined as thermal creep and often precedes insulation failure. If temperature exceeds 85C or rises more than 20% above the running baseline, reduce motor load and, if the trend continues, stop the motor.",
+    "suggested_fix_nl": "If motor temperature exceeds 85C, reduce load and stop the motor if the rise continues."
+  },
+  {
+    "chunk_id": "overload-guide-p21",
+    "procedure_id": "PROC-OVL-021",
+    "source_doc": "Motor Overload Troubleshooting Guide",
+    "page": 21,
+    "anomaly_types": ["thermal_creep", "other"],
+    "title": "Overload-Induced Heating",
+    "text": "Sustained current draw above rated nameplate amps causes heating that mimics thermal creep. Check RPM and current before assuming a bearing fault. If overload is confirmed and temperature keeps climbing, stop the motor and inspect the driven load for jams.",
+    "suggested_fix_nl": "If motor current stays above rated amps and temperature keeps rising, stop the motor and inspect for a jam."
+  },
+  {
+    "chunk_id": "plc-interlock-ref-p05",
+    "procedure_id": "PROC-INT-005",
+    "source_doc": "PLC Safety Interlock Reference",
+    "page": 5,
+    "anomaly_types": ["other"],
+    "title": "Vibration Interlock Rung Behavior",
+    "text": "The vibration interlock rung latches a stop coil when the vibration sensor contact exceeds its configured threshold for a debounce timer of 2 seconds. This prevents nuisance trips from momentary spikes while still stopping the motor for genuine sustained drift.",
+    "suggested_fix_nl": "If the vibration sensor contact stays above threshold for the debounce timer, latch the stop coil for the motor."
+  },
+  {
+    "chunk_id": "conv-ops-manual-p33",
+    "procedure_id": "PROC-OPS-033",
+    "source_doc": "Conveyor System Operations Manual",
+    "page": 33,
+    "anomaly_types": ["vibration_drift", "other"],
+    "title": "Conveyor Motor 2 Specific Notes",
+    "text": "Conveyor motor 2 has a lower baseline vibration (1.8 mm/s) than motor 1 due to its shorter belt run. Drift above 35% on motor 2 specifically has historically indicated pulley bearing wear rather than belt tension. Stop motor 2 and check the pulley bearing before adjusting belt tension.",
+    "suggested_fix_nl": "If vibration on conveyor motor 2 drifts above 35% of its baseline, stop conveyor motor 2 and check the pulley bearing."
+  },
+  {
+    "chunk_id": "predictive-playbook-p18",
+    "procedure_id": "PROC-PDM-018",
+    "source_doc": "Predictive Maintenance Playbook",
+    "page": 18,
+    "anomaly_types": ["bearing_wear", "vibration_drift"],
+    "title": "Escalation Thresholds by Severity",
+    "text": "Severity below 0.4: log and monitor. Severity 0.4-0.7: schedule inspection within 24 hours. Severity above 0.7: stop the affected motor immediately and dispatch a technician, since high severity combined with vibration drift strongly predicts imminent bearing failure.",
+    "suggested_fix_nl": "If anomaly severity exceeds 0.7, stop the affected motor immediately and dispatch a technician."
+  },
+  {
+    "chunk_id": "rpm-anomaly-guide-p09",
+    "procedure_id": "PROC-RPM-009",
+    "source_doc": "RPM and Speed Anomaly Guide",
+    "page": 9,
+    "anomaly_types": ["other"],
+    "title": "Unexpected RPM Fluctuation",
+    "text": "RPM fluctuations outside +/-5% of setpoint without an operator command usually indicate a drive fault or slipping belt rather than a mechanical bearing issue. Verify drive fault codes before scheduling mechanical inspection.",
+    "suggested_fix_nl": "If RPM fluctuates more than 5% from setpoint without a command, check the drive fault codes before dispatching a mechanic."
+  },
+  {
+    "chunk_id": "lockout-tagout-p01",
+    "procedure_id": "PROC-LOTO-001",
+    "source_doc": "Lockout-Tagout General Procedure",
+    "page": 1,
+    "anomaly_types": ["other"],
+    "title": "General Lockout Before Inspection",
+    "text": "Before any physical inspection of a stopped motor, energy must be isolated and locked out per site LOTO procedure. This applies regardless of the anomaly type that triggered the stop.",
+    "suggested_fix_nl": "If a motor has been stopped for inspection, lock out its energy source before any physical work begins."
+  }
+]

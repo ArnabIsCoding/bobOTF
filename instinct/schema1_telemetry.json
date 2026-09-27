@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Telemetry (Ears -> Instinct)",
+  "type": "object",
+  "required": ["device_id", "timestamp", "readings", "raw"],
+  "additionalProperties": false,
+  "properties": {
+    "device_id": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "readings": {
+      "type": "object",
+      "required": ["vibration_mm_s", "temperature_c", "rpm"],
+      "additionalProperties": false,
+      "properties": {
+        "vibration_mm_s": { "type": "number" },
+        "temperature_c": { "type": "number" },
+        "rpm": { "type": "number" }
+      }
+    },
+    "raw": { "type": "object" }
+  }
+}

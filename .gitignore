@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+wheels/
+.installed.cfg
+lib/
+lib64/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# pytest
+.pytest_cache/
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Bob workspace
+.bob/
+
+# Generated / runtime output
+instinct/anomalies_output.jsonl
+instinct/fixture_telemetry.jsonl
+ears/telemetry_stream.jsonl
+ears/telemetry_stream_anomaly.jsonl
+memory/example_output.json
+instinct/example_schema2_output.json

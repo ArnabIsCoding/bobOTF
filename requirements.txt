@@ -1,0 +1,17 @@
+# Root-level dependencies for mcp_server.py
+# (Device-specific deps are listed in each DEVICE N/ subdirectory)
+
+# MCP Python SDK — provides FastMCP and the stdio transport
+mcp>=2.0.0
+
+#Memory
+rank_bm25
+jsonschema
+
+# Instinct: DetectorConfig.from_yaml()
+pyyaml
+
+# Approval: rich terminal UI
+rich
+
+#Hands has no extra deps beyond the stdlib

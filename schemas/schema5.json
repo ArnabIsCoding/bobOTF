@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApprovalRecord (Approval output)",
+  "type": "object",
+  "required": ["request_id", "diff_ref", "status", "approver"],
+  "additionalProperties": false,
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1 },
+    "diff_ref": { "type": "object" },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected"]
+    },
+    "approver": { "type": "string" }
+  }
+}
