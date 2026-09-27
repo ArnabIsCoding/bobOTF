@@ -1,1 +1,1 @@
-web: python web.py
+web: python -m uvicorn web:app --host 0.0.0.0 --port 8000
