@@ -3,5 +3,7 @@ builder = "nixpacks"
 
 [deploy]
 startCommand = "python web.py"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
 restartPolicyType = "on_failure"
 restartPolicyMaxRetries = 3
