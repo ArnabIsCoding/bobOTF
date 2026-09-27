@@ -14,6 +14,7 @@ Field names match Schema 1 exactly — this file is what Device 2
 
 import datetime
 import json
+import os
 import random
 
 random.seed(42)  # deterministic fixture
@@ -91,12 +92,14 @@ def make_reading(i: int, ts: datetime.datetime):
 
 def main():
     start = datetime.datetime(2026, 9, 26, 14, 0, 0, tzinfo=datetime.timezone.utc)
-    with open("telemetry_stream.jsonl", "w") as f:
+    here = os.path.dirname(os.path.abspath(__file__))
+    out_path = os.path.join(here, "telemetry_stream.jsonl")
+    with open(out_path, "w") as f:
         for i in range(N_LINES):
             ts = start + datetime.timedelta(seconds=i * TICK_SECONDS)
             line = make_reading(i, ts)
             f.write(json.dumps(line) + "\n")
-    print(f"wrote {N_LINES} lines to telemetry_stream.jsonl")
+    print(f"wrote {N_LINES} lines to {out_path}")
 
 
 if __name__ == "__main__":

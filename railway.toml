@@ -2,6 +2,6 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "python -m uvicorn web:app --host 0.0.0.0 --port 8000"
+startCommand = "python ears/generate_fixture.py && python -m uvicorn web:app --host 0.0.0.0 --port 8000"
 healthcheckPath = "/health"
 healthcheckTimeout = 100
